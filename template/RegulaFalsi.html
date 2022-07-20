@@ -1,0 +1,37 @@
+<!doctype html>
+{% extends "base.html" %}
+
+{% block title %}
+Regula Falsi Method
+{% endblock %}}
+
+{% block body %}
+    <div style= "margin: 100px 10px 10px 300px; " class="col-md-7">
+    <div  class="m-5 p-5 bg-light border rounded-3" >
+      <h1 >Regula Falsi Method</h1><br>
+      <form  method="POST">
+        <!-- {{form.as_p}} -->
+        <h2 class="display-6">Val1</h2> {{form.val1}} <br>
+        <h2 class="display-6">Val2</h2> {{form.val2}}<br>
+        <h2 class="display-6">Tol</h2> {{form.tol}}<br>
+        <h2 class="display-6">Step</h2> {{form.stp}}<br>
+        {% csrf_token %}
+        <input type="submit"  style="width:450px;" class="btn btn-outline-primary btn-block btn-lg" value="submit">
+
+    </form><br>
+
+    {% with ''|center:1 as range %}
+    {% for _ in range %}
+    <li> No of Iterations {{ s }}</li><br>
+    
+    <li> Values of <b>x</b> at each Iteration are {{ a }} </li>
+    <br>
+    <li>  Values of <b>f(x)</b> at each Iteration are {{ b }} </li>
+    {% endfor %}
+    {% endwith %} 
+    <br>
+    <li>Required Root = <b>{{last}} </b> </li>
+    </div>
+    <a href="http://127.0.0.1:8000" class="btn btn-primary my-2">Back To Home</a>
+</div>
+{% endblock body %}

@@ -1,0 +1,27 @@
+<!doctype html>
+{% extends "base.html" %}
+
+{% block title %}
+Gauss Seidle Method
+{% endblock %}}
+
+{% block body %}
+
+    <div style= "margin: 100px 10px 10px 300px; " class="col-md-7">
+    <div  class="m-5 p-5 bg-light border rounded-3" >
+      <h1 >Gauss Seidle Method</h1><br>
+        <h2 class="fw-bold mb-0" >Enter TOL</h2> <br>
+        <form method="POST">
+        {% csrf_token %}
+        <input  class="form-control" type="text" placeholder = 'Enter Tolerence' id="fname" name="tol"><br><br>
+        <button type="button"  style="width:450px;" class="btn btn-outline-primary btn-block btn-lg" name = 'btn'>Submit</button><br><br>
+
+    </form>
+        <p><b>Iteration # 1 </b> x = {{a.0}} y =  {{a.1}} z =  {{a.2}}</p>
+        <p><b>Iteration # 2 </b> x = {{a.3}} y =  {{a.4}} z =  {{a.5}}</p>
+        <p><b>Iteration # 3 </b> x = {{a.6}} y =  {{a.7}} z =  {{a.8}}</p>
+    </div>
+    <a href="http://127.0.0.1:8000" class="btn btn-primary my-2">Back To Home</a>
+</div>
+  
+    {% endblock body %}
